@@ -1,4 +1,4 @@
-# Code for paper "Towards Fair and Robust Classification"
+# Code for paper "Towards Fair and Robust Classification" (EuroS&P'22 acceptance)
 
 ## General notes (**important**):
 - Environments and additional packages:
