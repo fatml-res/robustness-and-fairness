@@ -23,7 +23,7 @@
 	- ** In a word, the implementation part can be ignored unless there are some erros, and the execution sequence is: (1) Run batching scripts; and (2) Run result scripts and get the result. **
 
 
-## Existing Approaches (Figure 2 & Figure 8)
+## Existing Approaches (Figure 2 & Figure 15)
 
 - Implementation: ``ExistingCombosFnR.py``
 - Batching script: ``exec_ExistingCombosFnR.py``
@@ -35,7 +35,7 @@
 - Batching script: ``exec_InProcess.py``
 - Result script: ``./result/inproc/parse_Heatmap.py``
 
-## Angle of in-processing gradient (Figure 4 & Figure 9)
+## Angle of in-processing gradient (Figure 4 & Figure 11)
 
 - Implementation: ``InProcess.py``
 - Batching script: ``exec_InProcess.py``
@@ -47,26 +47,26 @@
 - Batching script: ``exec_PreProcess.py``
 - Result script: ``./result/preproc/parse_Heatmap.py``
 
-## Downstream models (Figure 6 & Figure 11)
+## Downstream models (Figure 6 & Figure 14)
 
 - Implementation: ``PreProcessOld.py`` for the old version, and ``PreProcessInflu.py`` for the new version with influence function on robustness as well. Need to turn the argv ``saveflag`` to ``True``. This is to generate pre-processed data;
 - Batching script: ``exec_PreProcGen.py`` for generating all data, and ``PreProcessDownstreams.py`` for running pre-set models, get the result and store the result for different downstream models in files
 - Result script: ``./result/preproc/parse_Figures.py``
 
-## Compare pre- and in-processing (Figure 7 & Figure 12)
+## Compare pre- and in-processing (Figure 8 & Figure 20)
 
 - Implementation: N/A, you need to get the result of pre- and in-processing first by running the heatmap parsing script of pre- and in-processing ``./result/preproc/parse_Heatmap.py`` and ``./result/inproc/parse_Heatmap.py``. After running these heatmap scripts, the data in those heatmap will be autommatically saved to ``./result/preindiff/`` folder as a ``.txt`` file;
 - Batching script: N/A
 - Result script: The result script of pre- and in-processing will automatically generate the heatmap data in ``./result/preindiff/``, so after the generation, run ``./result/preindiff/draw_diff.py``
 
-## Original fairness & robustness (Table 2)
+## Original fairness & robustness 
 
 - Implementation: ``ExistingCombosFnR.py``
 - Batching script: ``exec_ExistingCombosFnR.py``
 
 You can get the result from the result of existing approaches, just set wF=0 and wR=0, and the result will be original.
 
-## Fairness on robustenss (Table 3)
+## Fairness on robustenss 
 
 - Implementation: ``ExistingCombosFnR.py``
 - Batching script: ``exec_ExistingCombosFnR.py``
@@ -74,7 +74,7 @@ You can get the result from the result of existing approaches, just set wF=0 and
 
 You can get the result from the result of existing approaches, just compare the robustness score (but keep wR=0) of the setting with specific fairness wF parameter with original setting (wF=0 and wR=0).
 
-## Robustness on fairness (Table 4)
+## Robustness on fairness 
 
 - Implementation: ``ExistingCombosFnR.py``
 - Batching script: ``exec_ExistingCombosFnR.py``
